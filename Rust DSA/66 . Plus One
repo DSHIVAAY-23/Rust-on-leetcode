@@ -4,11 +4,11 @@ impl Solution {
         loop {
             if digits[i] != 9 { digits[i] += 1; break digits }
             
-            digits[i] = 0;
-            if i == 0 { digits.insert(0, 1); break digits }
-            i -= 1;
+            
+             if digits[i] == 9 { digits.insert(i, 1); digits[i+1] = 0;  break digits }
+            
         }
-    }
-        }
+    } 
+}
         
     
