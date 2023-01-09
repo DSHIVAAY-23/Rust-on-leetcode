@@ -1,14 +1,15 @@
 impl Solution {
     pub fn plus_one(mut digits: Vec<i32>) -> Vec<i32> {
-         let mut i = digits.len() - 1;
+        let mut i = digits.len() - 1;
         loop {
             if digits[i] != 9 { digits[i] += 1; break digits }
+            /* digits[i] == 9 */                                         //
+Inside the loop, if the element at index i is not 9, the element is incremented by one and the loop is exited. Otherwise, the element is set to 0 and i is decremented by one. 
+If i becomes 0, a 1 is inserted at the beginning of the vector, and the loop is exited.
+            digits[i] = 0;
             
-            
-             if digits[i] == 9 { digits.insert(i, 1); digits[i+1] = 0;  break digits }
-            
+            if i == 0 { digits.insert(i, 1); break digits }
+            i -= 1;
         }
-    } 
+    }
 }
-        
-    
